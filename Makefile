@@ -18,3 +18,6 @@ install: lib/libJerasure.so
 
 lib/libJerasure.so:
 	make -C src
+
+doc: doxygen.config
+	doxygen doxygen.config
