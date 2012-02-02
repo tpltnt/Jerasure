@@ -12,3 +12,8 @@ There are two directories:
 
 ## Hints ##
 It is assumed that GNU make is being used.
+
+## Issues ##
+* memory leaks (unconfirmed)
+  * reed_sol_vandermonde_coding_matrix
+  * jerasure_matrix_decode
