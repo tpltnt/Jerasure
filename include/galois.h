@@ -52,16 +52,6 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <stdio.h>
 #include <stdlib.h>
 
-/** This function perform
- * 
- * @param a Number of data devices
- * @param b Number of coding devices
- * @param w Word size
- * @param bitmatrix Array of k*m*w*w integers. It represents an mw by kw matrix. Element i,j is in matrix[i*k*w+j]
- * @todo return (int**)
- * @todo example code
- * @see galois_single_divide(int a, int b, int w)
- */
 extern int galois_single_multiply(int a, int b, int w);
 extern int galois_single_divide(int a, int b, int w);
 extern int galois_log(int value, int w);
