@@ -88,17 +88,17 @@ extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs
  */
 extern int *reed_sol_r6_coding_matrix(int k, int w);
 
-/** This performs the fast multiplication by two in \f$GF(28)\f$ using Anvin's optimization. region must be long-word aligned, and nbytes must be a multiple of the word size.
+/** This performs the fast multiplication by two in \f$GF(2^8)\f$ using Anvin's optimization. region must be long-word aligned, and nbytes must be a multiple of the word size.
  * @todo fix
  */
 extern void reed_sol_galois_w08_region_multby_2(char *region, int nbytes);
 
-/** This performs the fast multiplication by two in \f$GF(216)\f$.
+/** This performs the fast multiplication by two in \f$GF(2^16)\f$.
  * @todo fix
  */
 extern void reed_sol_galois_w16_region_multby_2(char *region, int nbytes);
 
-/** This performs the fast multiplication by two in \f$GF(232)\f$.
+/** This performs the fast multiplication by two in \f$GF(2^32)\f$.
  * @todo fix
  */
 extern void reed_sol_galois_w32_region_multby_2(char *region, int nbytes);
