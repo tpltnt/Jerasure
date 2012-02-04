@@ -47,24 +47,28 @@ POSSIBILITY OF SUCH DAMAGE.
 
  */
 
-/** This returns the last m rows of the distribution matrix in \f$GF(2^w)\f$, based on an extended Vandermonde matrix. This is a \f$m \times k\f$ matrix that can be used with the matrix routines in jerasure.c. The first row of this matrix is guaranteed to be all ones. The first column is also guaranteed to be all ones.
+/** This returns the last \f$m\f$ rows of the distribution matrix in \f$GF(2^w)\f$, based on an extended Vandermonde matrix. This is a \f$m \times k\f$ matrix that can be used with the matrix routines in jerasure.c. The first row of this matrix is guaranteed to be all ones. The first column is also guaranteed to be all ones.
  * 
  * @param k Number of data devices
  * @param m Number of coding devices
  * @param w Word size
  * @see reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w)
+ * @return last \f$m\f$ rows of the distribution matrix in \f$GF(2^w)\f$
  * @todo fix
  */
 extern int *reed_sol_vandermonde_coding_matrix(int k, int m, int w);
 
-/** This creates an extended Vandermonde matrix with rows rows and cols columns in \f$GF(2^w)\f$.
+/** This creates an extended Vandermonde matrix in \f$GF(2^w)\f$.
  *
+ * @param rows number of rows in \f$GF(2^w)\f$
+ * @param cols number of columns in \f$GF(2^w)\f$
  * @param w Word size
- * @todo fix
+ * @return pointer to extended Vandermonde matrix
+ * @todo example code
  */
 extern int *reed_sol_extended_vandermonde_matrix(int rows, int cols, int w);
 
-/** This converts the extendedmatrix above into a distribution matrix so that the top cols rows compose an identity matrix, and the remaining rows are in the format returned by reed_sol_vandermonde_coding_matrix().
+/** This converts the extended matrix above into a distribution matrix so that the top cols rows compose an identity matrix, and the remaining rows are in the format returned by reed_sol_vandermonde_coding_matrix().
  *
  * @param w Word size
  * @see reed_sol_vandermonde_coding_matrix(int k, int m, int w)
@@ -88,17 +92,32 @@ extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs
  */
 extern int *reed_sol_r6_coding_matrix(int k, int w);
 
-/** This performs the fast multiplication by two in \f$GF(2^8)\f$ using Anvin's optimization. region must be long-word aligned, and nbytes must be a multiple of the word size.
+/** This performs the fast multiplication by two in \f$GF(2^8)\f$ using Anvin's optimization.
+ *
+ * @param region must be long-word aligned
+ * @param nbytes must be a multiple of the word size
+ * @see reed_sol_galois_w16_region_multby_2(char *region, int nbytes)
+ * @see reed_sol_galois_w32_region_multby_2(char *region, int nbytes)
  * @todo fix
  */
 extern void reed_sol_galois_w08_region_multby_2(char *region, int nbytes);
 
 /** This performs the fast multiplication by two in \f$GF(2^16)\f$.
+ *
+ * @param region must be long-word aligned
+ * @param nbytes must be a multiple of the word size
+ * @see reed_sol_galois_w08_region_multby_2(char *region, int nbytes)
+ * @see reed_sol_galois_w32_region_multby_2(char *region, int nbytes)
  * @todo fix
  */
 extern void reed_sol_galois_w16_region_multby_2(char *region, int nbytes);
 
 /** This performs the fast multiplication by two in \f$GF(2^32)\f$.
+ *
+ * @param region must be long-word aligned
+ * @param nbytes must be a multiple of the word size
+ * @see reed_sol_galois_w08_region_multby_2(char *region, int nbytes)
+ * @see reed_sol_galois_w16_region_multby_2(char *region, int nbytes)
  * @todo fix
  */
 extern void reed_sol_galois_w32_region_multby_2(char *region, int nbytes);
