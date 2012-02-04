@@ -49,8 +49,19 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #ifndef _LIBERATION
 
+/**
+ * @todo fix
+ */
 extern int *liberation_coding_bitmatrix(int k, int w);
+
+/**
+ * @todo fix
+ */
 extern int *liber8tion_coding_bitmatrix(int k);
+
+/**
+ * @todo fix
+ */
 extern int *blaum_roth_coding_bitmatrix(int k, int w);
 
 #endif
