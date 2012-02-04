@@ -52,25 +52,53 @@ POSSIBILITY OF SUCH DAMAGE.
  * @param k Number of data devices
  * @param m Number of coding devices
  * @param w Word size
+ * @see reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w)
+ * @todo fix
  */
 extern int *reed_sol_vandermonde_coding_matrix(int k, int m, int w);
 
 /**This creates an extended Vandermonde matrix with rows rows and cols columns in GF (2w).
+ *
+ * @param w Word size
+ * @todo fix
  */
 extern int *reed_sol_extended_vandermonde_matrix(int rows, int cols, int w);
-/**This converts the extendedmatrix above into a distribution matrix so that the top cols rows compose an identity matrix, and the remaining rows
-are in the format returned by reed_sol_vandermonde_coding_matrix().
-* @see reed_sol_vandermonde_coding_matrix()
-*/
+
+/**This converts the extendedmatrix above into a distribution matrix so that the top cols rows compose an identity matrix, and the remaining rows are in the format returned by reed_sol_vandermonde_coding_matrix().
+ *
+ * @param w Word size
+ * @see reed_sol_vandermonde_coding_matrix(int k, int m, int w)
+ * @todo fix
+ */
 extern int *reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w);
 
 /**This encodes using the optimization. w must be 8, 16 or 32. Note, m is not needed because it is assumed to equal two, and no matrix is needed because it is implicit.
+ * 
+ * @param w Word size
+ * @todo fix
+ * @todo return
  */
 extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs, int size);
+
 /**This procedure returns the last two rows of the distribution matrix for RAID-6 for decoding purposes. The first of these rows will be all ones. The second of these rows will have 2 j in column j.
+ *
+ * @param k Number of data devices
+ * @param w Word size
+ * @todo fix
  */
 extern int *reed_sol_r6_coding_matrix(int k, int w);
 
+/**
+ * @todo fix
+ */
 extern void reed_sol_galois_w08_region_multby_2(char *region, int nbytes);
+
+/**
+ * @todo fix
+ */
 extern void reed_sol_galois_w16_region_multby_2(char *region, int nbytes);
+
+/**
+ * @todo fix
+ */
 extern void reed_sol_galois_w32_region_multby_2(char *region, int nbytes);
