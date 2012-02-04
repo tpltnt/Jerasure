@@ -64,7 +64,11 @@ are in the format returned by reed_sol_vandermonde_coding_matrix().
 */
 extern int *reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w);
 
+/**This encodes using the optimization. w must be 8, 16 or 32. Note, m is not needed because it is assumed to equal two, and no matrix is needed because it is implicit.
+ */
 extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs, int size);
+/**This procedure returns the last two rows of the distribution matrix for RAID-6 for decoding purposes. The first of these rows will be all ones. The second of these rows will have 2 j in column j.
+ */
 extern int *reed_sol_r6_coding_matrix(int k, int w);
 
 extern void reed_sol_galois_w08_region_multby_2(char *region, int nbytes);
