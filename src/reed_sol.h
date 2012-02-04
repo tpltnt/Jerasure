@@ -47,7 +47,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
  */
 
-/** This returns the last m rows of the distribution matrix in GF (2w), based on an extended Vandermonde matrix. This is a m x k matrix that can be used with the matrix routines in jerasure.c. The first row of this matrix is guaranteed to be all ones. The first column is also guaranteed to be all ones.
+/** This returns the last m rows of the distribution matrix in \f$GF(2^w)\f$, based on an extended Vandermonde matrix. This is a \f$m \times k\f$ matrix that can be used with the matrix routines in jerasure.c. The first row of this matrix is guaranteed to be all ones. The first column is also guaranteed to be all ones.
  * 
  * @param k Number of data devices
  * @param m Number of coding devices
@@ -57,7 +57,7 @@ POSSIBILITY OF SUCH DAMAGE.
  */
 extern int *reed_sol_vandermonde_coding_matrix(int k, int m, int w);
 
-/** This creates an extended Vandermonde matrix with rows rows and cols columns in GF (2w).
+/** This creates an extended Vandermonde matrix with rows rows and cols columns in \f$GF(2^w)\f$.
  *
  * @param w Word size
  * @todo fix
@@ -72,7 +72,7 @@ extern int *reed_sol_extended_vandermonde_matrix(int rows, int cols, int w);
  */
 extern int *reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w);
 
-/** This encodes using the optimization. w must be 8, 16 or 32. Note, m is not needed because it is assumed to equal two, and no matrix is needed because it is implicit.
+/** This encodes using the optimization. \f$w\f$ must be 8, 16 or 32. Note, \f$m\f$ is not needed because it is assumed to equal two, and no matrix is needed because it is implicit.
  * 
  * @param w Word size
  * @todo fix
@@ -80,7 +80,7 @@ extern int *reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int
  */
 extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs, int size);
 
-/** This procedure returns the last two rows of the distribution matrix for RAID-6 for decoding purposes. The first of these rows will be all ones. The second of these rows will have 2 j in column j.
+/** This procedure returns the last two rows of the distribution matrix for RAID-6 for decoding purposes. The first of these rows will be all ones. The second of these rows will have \f$2^j\f$ in column \f$j\f$.
  *
  * @param k Number of data devices
  * @param w Word size
@@ -88,17 +88,17 @@ extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs
  */
 extern int *reed_sol_r6_coding_matrix(int k, int w);
 
-/** This performs the fast multiplication by two in GF (28) using Anvin's optimization [Anv07]. region must be long-word aligned, and nbytes must be a multiple of the word size.
+/** This performs the fast multiplication by two in \f$GF(28)\f$ using Anvin's optimization. region must be long-word aligned, and nbytes must be a multiple of the word size.
  * @todo fix
  */
 extern void reed_sol_galois_w08_region_multby_2(char *region, int nbytes);
 
-/** This performs the fast multiplication by two in GF (216).
+/** This performs the fast multiplication by two in \f$GF(216)\f$.
  * @todo fix
  */
 extern void reed_sol_galois_w16_region_multby_2(char *region, int nbytes);
 
-/** This performs the fast multiplication by two in GF (232).
+/** This performs the fast multiplication by two in \f$GF(232)\f$.
  * @todo fix
  */
 extern void reed_sol_galois_w32_region_multby_2(char *region, int nbytes);
