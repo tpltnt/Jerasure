@@ -47,8 +47,21 @@ POSSIBILITY OF SUCH DAMAGE.
 
  */
 
+/**This returns the last m rows of the distribution matrix in GF (2w), based on an extended Vandermonde matrix. This is a m x k matrix that can be used with the matrix routines in jerasure.c. The first row of this matrix is guaranteed to be all ones. The first column is also guaranteed to be all ones.
+ * 
+ * @param k Number of data devices
+ * @param m Number of coding devices
+ * @param w Word size
+ */
 extern int *reed_sol_vandermonde_coding_matrix(int k, int m, int w);
+
+/**This creates an extended Vandermonde matrix with rows rows and cols columns in GF (2w).
+ */
 extern int *reed_sol_extended_vandermonde_matrix(int rows, int cols, int w);
+/**This converts the extendedmatrix above into a distribution matrix so that the top cols rows compose an identity matrix, and the remaining rows
+are in the format returned by reed_sol_vandermonde_coding_matrix().
+* @see reed_sol_vandermonde_coding_matrix()
+*/
 extern int *reed_sol_big_vandermonde_distribution_matrix(int rows, int cols, int w);
 
 extern int reed_sol_r6_encode(int k, int w, char **data_ptrs, char **coding_ptrs, int size);
