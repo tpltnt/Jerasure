@@ -11,7 +11,10 @@ There are two directories:
 * The Examples directory contains the example programs.  
 
 ## Hints ##
-It is assumed that GNU make is being used.
+* building works with GNU make
+* only temporary use of shared objects (no make install)
+  * Linux http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
+  * FreeBSD: man 8 ldconfig, man 1 rtld
 
 ## Issues ##
 * memory leaks (unconfirmed)
