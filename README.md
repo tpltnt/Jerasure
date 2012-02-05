@@ -5,10 +5,11 @@ Catherine D. Schuman.  More details can be found at
 
 See technical report CS-08-627 for a description of the code.  
 
-There are two directories:
+There are three directories:
 
-* The project home directory contains the jerasure code.
-* The Examples directory contains the example programs.  
+* The ``src`` directory contains the jerasure code.
+* The ``lib`` directory contains the libraries/shared objects.
+* The ``Examples`` directory contains the example programs.  
 
 ## Hints ##
 * building works with [GNU mak](http://www.gnu.org/s/make/)
