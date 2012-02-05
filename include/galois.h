@@ -52,33 +52,118 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <stdio.h>
 #include <stdlib.h>
 
+/** This function perform
+ * 
+ * @param a Number of data devices
+ * @param b Number of coding devices
+ * @param w Word size
+ * @param bitmatrix Array of k*m*w*w integers. It represents an mw by kw matrix. Element i,j is in matrix[i*k*w+j]
+ * @todo return (int**)
+ * @todo example code
+ * @see galois_single_divide(int a, int b, int w)
+ */
 extern int galois_single_multiply(int a, int b, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_single_divide(int a, int b, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_log(int value, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_ilog(int value, int w);
 
+/**
+ * @todo fix
+ */
 extern int galois_create_log_tables(int w);   /* Returns 0 on success, -1 on failure */
+
+/**
+ * @todo fix
+ */
 extern int galois_logtable_multiply(int x, int y, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_logtable_divide(int x, int y, int w);
 
+/**
+ * @todo fix
+ */
 extern int galois_create_mult_tables(int w);   /* Returns 0 on success, -1 on failure */
+
+/**
+ * @todo fix
+ */
 extern int galois_multtable_multiply(int x, int y, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_multtable_divide(int x, int y, int w);
 
+/**
+ * @todo fix
+ */
 extern int galois_shift_multiply(int x, int y, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_shift_divide(int x, int y, int w);
 
+/**
+ * @todo fix
+ */
 extern int galois_create_split_w8_tables();
+
+/**
+ * @todo fix
+ */
 extern int galois_split_w8_multiply(int x, int y);
 
+/**
+ * @todo fix
+ */
 extern int galois_inverse(int x, int w);
+
+/**
+ * @todo fix
+ */
 extern int galois_shift_inverse(int y, int w);
 
+
+/**
+ * @todo fix
+ */
 extern int *galois_get_mult_table(int w);
+
+/**
+ * @todo fix
+ */
 extern int *galois_get_div_table(int w);
+
+/**
+ * @todo fix
+ */
 extern int *galois_get_log_table(int w);
+
+/**
+ * @todo fix
+ */
 extern int *galois_get_ilog_table(int w);
 
+
+/**
+ * @todo fix
+ */
 void galois_region_xor(           char *r1,         /* Region 1 */
                                   char *r2,         /* Region 2 */
                                   char *r3,         /* Sum region (r3 = r1 ^ r2) -- can be r1 or r2 */
@@ -87,6 +172,9 @@ void galois_region_xor(           char *r1,         /* Region 1 */
 /* These multiply regions in w=8, w=16 and w=32.  They are much faster
    than calling galois_single_multiply.  The regions must be long word aligned. */
 
+/**
+ * @todo fix
+ */
 void galois_w08_region_multiply(char *region,       /* Region to multiply */
                                   int multby,       /* Number to multiply by */
                                   int nbytes,       /* Number of bytes in region */
@@ -94,6 +182,9 @@ void galois_w08_region_multiply(char *region,       /* Region to multiply */
                                                        Otherwise region is overwritten */
                                   int add);         /* If (r2 != NULL && add) the produce is XOR'd with r2 */
 
+/**
+ * @todo fix
+ */
 void galois_w16_region_multiply(char *region,       /* Region to multiply */
                                   int multby,       /* Number to multiply by */
                                   int nbytes,       /* Number of bytes in region */
@@ -101,6 +192,9 @@ void galois_w16_region_multiply(char *region,       /* Region to multiply */
                                                        Otherwise region is overwritten */
                                   int add);         /* If (r2 != NULL && add) the produce is XOR'd with r2 */
 
+/**
+ * @todo fix
+ */
 void galois_w32_region_multiply(char *region,       /* Region to multiply */
                                   int multby,       /* Number to multiply by */
                                   int nbytes,       /* Number of bytes in region */

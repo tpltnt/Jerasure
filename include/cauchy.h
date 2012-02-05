@@ -46,8 +46,27 @@ POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/**
+ * @todo fix
+ */
 extern int *cauchy_original_coding_matrix(int k, int m, int w);
+
+/**
+ * @todo fix
+ */
 extern int *cauchy_xy_coding_matrix(int k, int m, int w, int *x, int *y);
+
+/**
+ * @todo fix
+ */
 extern void cauchy_improve_coding_matrix(int k, int m, int w, int *matrix);
+
+/**
+ * @todo fix
+ */
 extern int *cauchy_good_general_coding_matrix(int k, int m, int w);
+
+/**
+ * @todo fix
+ */
 extern int cauchy_n_ones(int n, int w);
