@@ -12,11 +12,13 @@ There are two directories:
 
 ## Hints ##
 * building works with GNU make
+* talloc is not the [Samba one](http://talloc.samba.org/talloc/doc/html/index.html)
+  * defined as ``#define talloc(type, num) (type *) malloc(sizeof(type)*(num))``
 * only temporary use of shared objects (no make install)
   * set $LD_LIBRARY_PATH to Jerasure/lib
-  * Linux http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
+  * Linux: [Program Library HOWTO](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html)
   * FreeBSD: man 8 ldconfig, man 1 rtld
-* "make install" installs shared objects into home-directory
+* ``make install`` installs shared objects into home-directory
 
 ## Issues ##
 * memory leaks (unconfirmed)
