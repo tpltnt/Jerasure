@@ -13,8 +13,10 @@ There are two directories:
 ## Hints ##
 * building works with GNU make
 * only temporary use of shared objects (no make install)
+  * set $LD_LIBRARY_PATH to Jerasure/lib
   * Linux http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
   * FreeBSD: man 8 ldconfig, man 1 rtld
+* "make install" installs shared objects into home-directory
 
 ## Issues ##
 * memory leaks (unconfirmed)
