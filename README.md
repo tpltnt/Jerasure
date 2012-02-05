@@ -20,5 +20,4 @@ There are two directories:
 
 ## Issues ##
 * memory leaks (unconfirmed)
-  * reed_sol_vandermonde_coding_matrix
   * jerasure_matrix_decode
