@@ -239,7 +239,7 @@ int galois_create_mult_tables(int w)
   if (galois_mult_tables[w] == NULL) return -1;
 
   // NULL-pointer check?
-  if (galois_div_tables[w] == NULL) {
+  if (galois_div_tables[w] != NULL) {
 	  fprintf(stderr,"galois_div_tables[w] != NULL\n");
 	  return 0;
   }
