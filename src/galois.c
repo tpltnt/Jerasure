@@ -237,7 +237,8 @@ int galois_create_mult_tables(int w)
   if (galois_mult_tables[w] != NULL) return 0;
   galois_mult_tables[w] = (int *) malloc(sizeof(int) * nw[w] * nw[w]);
   if (galois_mult_tables[w] == NULL) return -1;
-  
+
+  // NULL-pointer check?
   galois_div_tables[w] = (int *) malloc(sizeof(int) * nw[w] * nw[w]);
   if (galois_div_tables[w] == NULL) {
     free(galois_mult_tables[w]);
