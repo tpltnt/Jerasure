@@ -11,6 +11,8 @@ There are three directories:
 * The ``lib`` directory contains the libraries/shared objects.
 * The ``Examples`` directory contains the example programs.  
 
+**status:** occasional fixes
+
 ## Hints ##
 * building works with [GNU mak](http://www.gnu.org/s/make/)
 * talloc is *not* the [Samba one](http://talloc.samba.org/talloc/doc/html/index.html)
@@ -22,5 +24,5 @@ There are three directories:
 * ``make install`` installs shared objects into home-directory
 
 ## Issues ##
-* memory leaks (unconfirmed)
+* memory leaks
   * jerasure_matrix_decode
