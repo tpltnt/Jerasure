@@ -14,7 +14,7 @@ There are three directories:
 **status:** occasional fixes
 
 ## Hints ##
-* building works with [GNU mak](http://www.gnu.org/s/make/)
+* building works with [GNU make](http://www.gnu.org/s/make/)
 * talloc is *not* the [Samba one](http://talloc.samba.org/talloc/doc/html/index.html)
   * defined as ``#define talloc(type, num) (type *) malloc(sizeof(type)*(num))``
 * only temporary use of shared objects (no make install)
